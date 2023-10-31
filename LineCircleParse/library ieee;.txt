@@ -1,0 +1,9 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity SameAsFile is
+port(     : out std_logic;
+  : in std_logic);
+end entity SevenSegment;
+architecture YouGetToDecide of SameAsFile is
+begin
+end architecture YouGetToDecide;

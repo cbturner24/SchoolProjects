@@ -1,0 +1,4 @@
+﻿  RoboMove2_15.cpp
+C:\Users\chlob\source\repos\LineCircleParse\RoboMove2_15.cpp(13,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\chlob\source\repos\LineCircleParse\RoboMove2_15.cpp(14,8): warning C4930: 'Parse DataIn(void)': prototyped function not called (was a variable definition intended?)
+  LineCircleParse.vcxproj -> C:\Users\chlob\source\repos\LineCircleParse\x64\Debug\LineCircleParse.exe
