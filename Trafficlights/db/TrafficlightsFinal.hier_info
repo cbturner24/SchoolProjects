@@ -1,0 +1,184 @@
+|TrafficlightsFinal
+MR <= TrafficFinal:inst4.MainR
+CLKIN => SequentialBlock:inst.Clock
+CLKIN => FreqDivider:inst5.clkIn
+VSIN => SequentialBlock:inst.VehicleSensor
+MY <= TrafficFinal:inst4.MainY
+MG <= TrafficFinal:inst4.MainG
+SR <= TrafficFinal:inst4.SideR
+SY <= TrafficFinal:inst4.SideY
+SG <= TrafficFinal:inst4.SideG
+Clockout <= FreqDivider:inst5.clkOut
+
+
+|TrafficlightsFinal|TrafficFinal:inst4
+MainR <= LightDeocder:inst.MR
+G0 => TrafficDecoder:inst2.G0
+G1 => TrafficDecoder:inst2.G1
+MainY <= LightDeocder:inst.MY
+MainG <= LightDeocder:inst.MG
+SideR <= LightDeocder:inst.SR
+SideY <= LightDeocder:inst.SY
+SideG <= LightDeocder:inst.SG
+LongTime <= Triggerlogic:inst7.LongTrig
+ShortTime <= Triggerlogic:inst7.ShortTrig
+
+
+|TrafficlightsFinal|TrafficFinal:inst4|LightDeocder:inst
+MR <= inst.DB_MAX_OUTPUT_PORT_TYPE
+L4 => inst.IN0
+L4 => SY.DATAIN
+L3 => inst.IN1
+L3 => SG.DATAIN
+MY <= L2.DB_MAX_OUTPUT_PORT_TYPE
+L2 => MY.DATAIN
+L2 => inst1.IN0
+MG <= L1.DB_MAX_OUTPUT_PORT_TYPE
+L1 => MG.DATAIN
+L1 => inst1.IN1
+SR <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+SY <= L4.DB_MAX_OUTPUT_PORT_TYPE
+SG <= L3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|TrafficFinal:inst4|TrafficDecoder:inst2
+S1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+G0 => inst.IN0
+G0 => inst3.IN1
+G0 => inst4.IN0
+G1 => inst1.IN0
+G1 => inst4.IN1
+G1 => inst5.IN1
+S2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
+S3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
+S4 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|TrafficFinal:inst4|Triggerlogic:inst7
+LongTrig <= inst.DB_MAX_OUTPUT_PORT_TYPE
+T3 => inst.IN0
+T1 => inst.IN1
+ShortTrig <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+T4 => inst1.IN0
+T2 => inst1.IN1
+
+
+|TrafficlightsFinal|SequentialBlock:inst
+G0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
+Clock => inst.CLK
+Clock => inst1.CLK
+VehicleSensor => SequentialLogic:inst2.VS
+TLong => SequentialLogic:inst2.TL
+Tshort => SequentialLogic:inst2.TS
+G1 <= inst1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|SequentialBlock:inst|SequentialLogic:inst2
+VS => D0.IN1
+VS => D0.IN1
+VS => D1.IN1
+TL => D0.IN1
+TL => D0.IN1
+TL => D1.IN1
+TS => D1.IN1
+TS => D1.IN1
+G0 => D0.IN0
+G0 => D0.IN0
+G0 => D0.IN0
+G0 => D1.IN0
+G1 => D0.IN1
+G1 => D1.IN1
+G1 => D0.IN1
+G1 => D0.IN1
+D0 <= D0.DB_MAX_OUTPUT_PORT_TYPE
+D1 <= D1.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|TimerCircuits:inst6
+LongTrig => Timer:TLong.Enable
+ShortTrig => Timer:TShort.Enable
+clock => Timer:TLong.clock
+clock => Timer:TShort.clock
+TS <= Timer:TShort.QOut
+TL <= Timer:TLong.QOut
+
+
+|TrafficlightsFinal|TimerCircuits:inst6|Timer:TLong
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => QOut.OUTPUTSELECT
+clock => QOut~reg0.CLK
+clock => cnt[0].CLK
+clock => cnt[1].CLK
+clock => cnt[2].CLK
+clock => cnt[3].CLK
+clock => cnt[4].CLK
+Duration[0] => Equal0.IN9
+Duration[1] => Equal0.IN8
+Duration[2] => Equal0.IN7
+Duration[3] => Equal0.IN6
+Duration[4] => Equal0.IN5
+QOut <= QOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|TimerCircuits:inst6|Timer:TShort
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => cnt.OUTPUTSELECT
+Enable => QOut.OUTPUTSELECT
+clock => QOut~reg0.CLK
+clock => cnt[0].CLK
+clock => cnt[1].CLK
+clock => cnt[2].CLK
+clock => cnt[3].CLK
+clock => cnt[4].CLK
+Duration[0] => Equal0.IN9
+Duration[1] => Equal0.IN8
+Duration[2] => Equal0.IN7
+Duration[3] => Equal0.IN6
+Duration[4] => Equal0.IN5
+QOut <= QOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|TrafficlightsFinal|FreqDivider:inst5
+clkIn => clkOut~reg0.CLK
+clkIn => \FreqBehavior:Cnt[0].CLK
+clkIn => \FreqBehavior:Cnt[1].CLK
+clkIn => \FreqBehavior:Cnt[2].CLK
+clkIn => \FreqBehavior:Cnt[3].CLK
+clkIn => \FreqBehavior:Cnt[4].CLK
+clkIn => \FreqBehavior:Cnt[5].CLK
+clkIn => \FreqBehavior:Cnt[6].CLK
+clkIn => \FreqBehavior:Cnt[7].CLK
+clkIn => \FreqBehavior:Cnt[8].CLK
+clkIn => \FreqBehavior:Cnt[9].CLK
+clkIn => \FreqBehavior:Cnt[10].CLK
+clkIn => \FreqBehavior:Cnt[11].CLK
+clkIn => \FreqBehavior:Cnt[12].CLK
+clkIn => \FreqBehavior:Cnt[13].CLK
+clkIn => \FreqBehavior:Cnt[14].CLK
+clkIn => \FreqBehavior:Cnt[15].CLK
+clkIn => \FreqBehavior:Cnt[16].CLK
+clkIn => \FreqBehavior:Cnt[17].CLK
+clkIn => \FreqBehavior:Cnt[18].CLK
+clkIn => \FreqBehavior:Cnt[19].CLK
+clkIn => \FreqBehavior:Cnt[20].CLK
+clkIn => \FreqBehavior:Cnt[21].CLK
+clkIn => \FreqBehavior:Cnt[22].CLK
+clkIn => \FreqBehavior:Cnt[23].CLK
+clkIn => \FreqBehavior:Cnt[24].CLK
+clkIn => \FreqBehavior:Cnt[25].CLK
+clkIn => \FreqBehavior:Cnt[26].CLK
+clkIn => \FreqBehavior:Cnt[27].CLK
+clkIn => \FreqBehavior:Cnt[28].CLK
+clkIn => \FreqBehavior:Cnt[29].CLK
+clkIn => \FreqBehavior:Cnt[30].CLK
+clkIn => \FreqBehavior:Cnt[31].CLK
+clkOut <= clkOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'CLKIN'
+Slack : -5.346
+TNS   : -116.535
+
+Type  : Slow 1100mV 85C Model Setup 'FreqDivider:inst5|clkOut'
+Slack : -4.704
+TNS   : -51.747
+
+Type  : Slow 1100mV 85C Model Hold 'CLKIN'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'FreqDivider:inst5|clkOut'
+Slack : 0.624
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLKIN'
+Slack : -0.496
+TNS   : -23.196
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'FreqDivider:inst5|clkOut'
+Slack : -0.394
+TNS   : -6.186
+
+Type  : Slow 1100mV 0C Model Setup 'CLKIN'
+Slack : -5.376
+TNS   : -114.128
+
+Type  : Slow 1100mV 0C Model Setup 'FreqDivider:inst5|clkOut'
+Slack : -4.824
+TNS   : -53.482
+
+Type  : Slow 1100mV 0C Model Hold 'CLKIN'
+Slack : 0.310
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'FreqDivider:inst5|clkOut'
+Slack : 0.587
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLKIN'
+Slack : -0.496
+TNS   : -25.032
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'FreqDivider:inst5|clkOut'
+Slack : -0.394
+TNS   : -6.144
+
+Type  : Fast 1100mV 85C Model Setup 'CLKIN'
+Slack : -3.043
+TNS   : -52.682
+
+Type  : Fast 1100mV 85C Model Setup 'FreqDivider:inst5|clkOut'
+Slack : -2.365
+TNS   : -25.673
+
+Type  : Fast 1100mV 85C Model Hold 'CLKIN'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'FreqDivider:inst5|clkOut'
+Slack : 0.334
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLKIN'
+Slack : -0.489
+TNS   : -4.347
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'FreqDivider:inst5|clkOut'
+Slack : 0.144
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'CLKIN'
+Slack : -2.717
+TNS   : -44.553
+
+Type  : Fast 1100mV 0C Model Setup 'FreqDivider:inst5|clkOut'
+Slack : -2.277
+TNS   : -24.952
+
+Type  : Fast 1100mV 0C Model Hold 'CLKIN'
+Slack : 0.156
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'FreqDivider:inst5|clkOut'
+Slack : 0.299
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLKIN'
+Slack : -0.461
+TNS   : -4.258
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'FreqDivider:inst5|clkOut'
+Slack : 0.143
+TNS   : 0.000
+
+------------------------------------------------------------

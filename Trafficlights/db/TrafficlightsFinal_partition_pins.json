@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "MR",
+					"strict" : false
+				},
+				{
+					"name" : "MY",
+					"strict" : false
+				},
+				{
+					"name" : "MG",
+					"strict" : false
+				},
+				{
+					"name" : "SR",
+					"strict" : false
+				},
+				{
+					"name" : "SY",
+					"strict" : false
+				},
+				{
+					"name" : "SG",
+					"strict" : false
+				},
+				{
+					"name" : "Clockout",
+					"strict" : false
+				},
+				{
+					"name" : "CLKIN",
+					"strict" : false
+				},
+				{
+					"name" : "VSIN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
