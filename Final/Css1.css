@@ -1,0 +1,15 @@
+.text-area {
+    -fx-background-color: white;
+       -fx-border-color: #FF1493;
+}
+
+.text
+{-fx-text-alignment: center;
+    -fx-font-size: 10pt;
+    -fx-font-style: italic;
+    -fx-fill: #FF1493;
+   }
+    
+#myPane {
+    -fx-font-size: 10; /* Replace 14 with your desired font size */
+}
